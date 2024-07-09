@@ -1,12 +1,10 @@
-const navbar = document.querySelector("ul");
+function showNavbar() {
+    const navbar = document.querySelector('#navbar');
+    const computedStyle = getComputedStyle(navbar);
 
-navbar.addEventListener("hover", function(event) {
-    // Prevent the default action of the anchor tag
-    event.preventDefault();
-    
-    // Change the color of the text
-    this.style.color = "red"; // Change "red" to any color you like
-    
-    // Change other styles as needed
-    this.style.fontSize = "20px"; // Example: Change font size
-});
+    if (computedStyle.display === 'none') {
+        navbar.style.display = 'inline-flex';
+    } else {
+        navbar.style.display = 'none';
+    }
+}
