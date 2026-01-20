@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vrakuko</title>
+    <link rel="stylesheet" href="style/styles.css"></link>
+    <script src="script/index.js"></script>
+</head>
+
+<style>
+    html { scroll-behavior: smooth; }
+    
+</style>
+
+<body onscroll="scrolll()">
+    <div id="opener">
+        <h1 id="gw" onclick="window.scrollTo(0,0)">vrakuko</h1>
+        
+        <button id="menutogelbtn" onclick="toggleMenu()">
+            <img id="menutogel" src="public/menutogel.svg" alt="menu">
+        </button>     
+
+        <div id="navbar">
+            <ul id="navbar-menu">
+                <li><a href="#about" class="linknavbar" onclick="closeMenu()">About</a></li>
+                <li><a href="#project" class="linknavbar" onclick="closeMenu()">My Project</a></li>
+                <li><a href="#contact" class="linknavbar" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="container">
+        <section id="about" class="section">
+            <h1>Hello</h1>
+            <p>My name is Varraz. I am an informatics undergraduate student.</p>
+        </section>
+        
+
+
+        <section id="project" class="section">
+
+            <h1>My Projects</h1>
+            <p>Beberapa proyek yang telah saya kerjakan:</p>
+            
+            <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-icon">🖼️</div> <h3>Anime Classifier</h3>
+                        <p>Aplikasi Android klasifikasi citra anime menggunakan Deep Learning.</p>
+                        <a href="page/detail-project1.html" class="btn-more">Lihat Selengkapnya</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon">🥭</div>
+                        <h3>Mangosteen Clustering</h3>
+                        <p>Sistem klasifikasi kematangan manggis dengan pengolahan citra digital.</p>
+                        <a href="#" class="btn-more">Lihat Selengkapnya</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon">🐍</div>
+                        <h3>Python Automation</h3>
+                        <p>Script otomasi untuk efisiensi tugas pengolahan data menggunakan Python.</p>
+                        <a href="#" class="btn-more">Lihat Selengkapnya</a>
+                    </div>
+                </div>
+        </section>
+            
+        <section id="contact" class="section">
+            <h3>Get in touch!</h3>
+            <ul id='socmed' class="socmed">
+                <li><a target="_blank" href="https://www.instagram.com/inztavran/"><img id="ikon-ig" src="public/ig-icon.svg" alt="Instagram"></a></li>
+                <li><a target="_blank" href="https://github.com/vrakuko"><img id="ikon-gt" src="public/github-icon.svg" alt="GitHub"></a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/varraz-hazzandra-abrar-762398249/"><img id="ikon-lk" src="public/linkedin-icon.svg" alt="LinkedIn"></a></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 vrakuko</p>
+    </footer>
+</body>
+

@@ -1,174 +1,287 @@
-html, body{
-    width: 100%;
-    height: 100%;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#navbar-menu, #socmed{
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* Section Styling */
+.section {
+    padding: 100px 20px; /* Jarak antar bagian agar tidak sesak */
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#opener {
+    height: 70px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    z-index: 1000;
+    transition: 0.3s all ease;
+}
+
+#gw {
+    cursor: pointer;
+    font-family: monospace;
+    background: #15121f;
+    color: chartreuse;
+    padding: 5px 15px;
+    border-radius: 4px;
+}
+
+
+
+/* Gunakan koma untuk memilih beberapa ID */
+#ikon-ig, #ikon-lk, #ikon-gt {
+    height: 24px; /* Ukuran standar ikon yang nyaman dilihat */
+    width: 24px;
+    
+    object-fit: contain; /* Memastikan gambar tidak penyet */
+    transition: transform 0.3s ease;
+}
+
+/* Tambahkan efek hover agar interaktif */
+#ikon-ig:hover, #ikon-lk:hover, #ikon-gt:hover {
+    transform: scale(1.2); /* Sedikit membesar saat disentuh */
+}
+/* Navbar Desktop */
+#navbar-menu {
+    display: flex;
     list-style: none;
 }
 
 
-body {
+
+.linknavbar {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #15121f;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.linknavbar:hover {
+    color: chocolate;
+}
+
+/* Socmed di Footer agar lebih rapi */
+.socmed {
+    display: flex;
+    gap: 60px;
+    list-style: none;
+    margin-top: 20px;
+}
+
+footer {
+    padding: 40px 0;
+    background: #040404;
+    color: white;
+    text-align: center;
+}
+
+/* Container Grid */
+.project-grid {
+    display: flex;             /* Gunakan flex agar elemen berjejer ke samping */
+    overflow-x: auto;          /* Aktifkan scroll horizontal */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 40px;
+    -webkit-overflow-scrolling: touch; /* Optimasi scroll lancar di HP/iOS */
+     scroll-behavior: smooth;   /* Agar scroll terasa halus */
+       padding: 20px 10px;        /* Padding agar bayangan card tidak terpotong */
+
+        scrollbar-width: none;     /* Untuk Firefox */
+}
+
+#menutogelbtn{
+    display: none;
+}
+
+
+/* Menyembunyikan scrollbar untuk Chrome/Safari */
+.project-grid::-webkit-scrollbar {
+    display: none;
+}
+
+/* Styling Card */
+.project-card {
+    flex: 0 0 300px;    
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    border: 1px solid #eee;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 
 
+.project-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
 
+.project-card h3 {
+    margin-bottom: 15px;
+    color: #15121f;
+}
 
+.project-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Memastikan tombol selalu di bawah */
+}
 
+/* Tombol Selengkapnya */
+.btn-more {
+    text-decoration: none;
+    background-color: #307c62;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-@media (max-width:600px){
+.btn-more:hover {
+    background-color: chocolate;
+}
 
-    #opener{
-        position: fixed;
-        top:0px;
-        left: 0px;
-        background-color: #7fffd4;
-        min-width: 100%;
-        height: 50px;
-        padding: 5px 0px; 
-        z-index:1000;
-    }
-
-    #container{
-        position: absolute;
-        left: 0px;
-        width: 100%;
-        height: calc(100vh - 60px); /* Full height minus the opener height */
-        padding: 5px 0px;
-        top: 60px;
-        background-color: #524094;
-        flex: 1;
-        padding-top: 60px; /* Adjusted to include the opener height */
-    }
-
-    .linknavbar{
-        font-style: none;
-        color: turquoise;
-        text-decoration-line: none;
-    }
-
-    #navbar{
-        display: none;
-        position:absolute;
-        left: 0px;
-        width : 100%;
-        height: calc(100vh - 60px); /* Full height minus the opener height */
-        padding: 5px 0px;
-        top: 60px;
-        background-color: #482da9;
-    }
-
-    #socmed{
-        display: flex ;
-    }
-
-    
-
-    footer{
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        padding: 5px 0;
-        border-style: dashed;
-        border-radius: 2px;
-        border-color: #439476;
-        background-color: #040404; /* Contoh warna background footer */
-        color: rgb(183, 150, 150); /* Contoh warna teks footer */
-        text-align: center;
-    }
-
-    
-
-    #navbar-menu{
-        position: sticky;
-        left: 3px;
-        padding: 5px;
-        margin : none;
-    }
-
-   #navbar-menu li{
-        position: sticky;
-        padding: 5px;
-        margin: 20px 0px;
-   }
-
-   
-
-    #ikon-ig,#ikon-lk, #ikon-gt{
-        width: 12px;
-        height: 12px;
-
-    }
-
+/* RESPONSIVE MOBILE */
+@media (max-width: 600px) {
     #menutogel{
-        width : 16px;
-        height : 16px;
+        height:30px;
+        width:30px;
+        position: fixed;
+        right : 20px;
+        top : 15px;
+    }
+    #menutogelbtn {
+        display: block;
+        z-index: 1100;
     }
 
-    #socmed li{
-        margin : 0 8px;
+    #opener {
+
+        height: 70px;
+
     }
 
-    #menutogelbtn{
-        position: absolute;
-        top:20px;
-        right: 20px;
-        /* margin-right : 20px; */
-        /* padding: 1px; */
-        background-color: transparent;
-        border: none;
-        z-index: 1001; /* Ensures it is above other elements */
+    #navbar {
+        position: fixed;
+        top: 70px;
+        right: -100%; /* Sembunyi di kanan */
+        width: 70%;
+        height: 100vh;
+        background: #482da9;
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        transition: 0.5s;
     }
 
-    #gw{
-        position: absolute;
-        top:-2px;
-        left: 10px;
-        font-size: 24px;
+    #navbar.active {
+        right: 0; /* Muncul saat aktif */
     }
+
+    #navbar-menu {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .linknavbar {
+        color: white;
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .project-grid {
+    display: flex;             /* Gunakan flex agar elemen berjejer ke samping */
+    overflow-x: auto;          /* Aktifkan scroll horizontal */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 17px;
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 25px;
+    -webkit-overflow-scrolling: touch; /* Optimasi scroll lancar di HP/iOS */
+     scroll-behavior: smooth;   /* Agar scroll terasa halus */
+       padding: 15px 8px;        /* Padding agar bayangan card tidak terpotong */
+
+        scrollbar-width: none;     /* Untuk Firefox */
 }
 
 
 
-@media (min-width:601px) {
-    /* #opener{
-        position: fixed;
-        top:0px;
-        left: 0px;
-        background-color: #7fffd4;
-        min-width: 100%;
-        height: 50px;
-        padding: 5px 0px; 
-        z-index:1000;
-    }
+/* Menyembunyikan scrollbar untuk Chrome/Safari */
+.project-grid::-webkit-scrollbar {
+    display: none;
+}
 
-    .linknavbar{
-        font-style: none;
-        color: turquoise;
-        text-decoration-line: none;
-    } */
+/* Styling Card */
+.project-card {
+    flex: 0 0 200px;    
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #eee;
+}
 
-    #navbar-menu, #socmed{
-        display: flex;
-    }
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
 
-    #ikon-ig,#ikon-lk, #ikon-gt{
-        width: 30px;
-        height: 30px;
+.project-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
 
-    }
-    
-    #socmed li{
-        padding : 0 31px;
-        
-    }
+.project-card h3 {
+    margin-bottom: 5px;
+    color: #15121f;
+}
 
-    #menutogelbtn{
-        display: none;
+.project-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+    flex-grow: 1; /* Memastikan tombol selalu di bawah */
+}
+.socmed {
+    display: flex;
+     max-height: 30px;
+    gap: 30px;
+}
 
-    }
 }
